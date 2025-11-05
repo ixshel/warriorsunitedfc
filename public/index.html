@@ -1,224 +1,285 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Warriors United FC - Discipline. Passion. Unity.</title>
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="manifest" href="assets/site.webmanifest" />
-    <link rel="stylesheet" href="styles/index.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Warriors United FC | Youth Soccer Club in Inland Empire, CA</title>
+  <meta name="description" content="Warriors United FC is a premier youth and kids soccer club based in the Inland Empire, CA. Join our soccer academy, tryouts, and competitive teams for ages 5–18." />
+  <link rel="canonical" href="https://inlandempire.soccer/" />
+
+  <!-- Social / Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://inlandempire.soccer/" />
+  <meta property="og:title" content="Warriors United FC | Youth Soccer Club in Inland Empire, CA" />
+  <meta property="og:description" content="Developing young athletes through discipline, passion, and unity. Soccer teams, tryouts, and academy programs for ages 5–18." />
+  <meta property="og:image" content="https://inlandempire.soccer/assets/hero_warriors.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/warriors_united_logo_blue.png" />
+
+  <!-- Icons / manifest -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles/index.css" />
 </head>
-
 <body>
-    <header>
-        <nav>
-            <!-- ✅ Use your real PNG here -->
-            <a href="#" class="brand" aria-label="Warriors United FC - Home">
-                <img class="brand-logo" src="assets/warriors_united_logo_blue.png" alt="Warriors United FC logo"
-                    width="120" height="120" />
-                <div class="brand-text">
-                    <h1>WARRIORS</h1>
-                    <p>UNITED FC</p>
-                </div>
-            </a>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#academy">ACADEMY</a></li>
-                <li><a href="#teams">TEAMS</a></li>
-                <li><a href="#news">NEWS</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-                <li><button class="join-btn" onclick="openModal()">JOIN NOW</button></li>
-            </ul>
-
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-        </nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>WARRIORS UNITED FC</h2>
-            <p>DISCIPLINE. PASSION. <span>UNITY.</span></p>
-            <button class="learn-more-btn"
-                onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">LEARN MORE</button>
+  <header>
+    <nav>
+      <a href="/" class="brand" aria-label="Warriors United FC - Home" rel="home">
+        <img class="brand-logo" src="assets/warriors_united_logo_blue.png" alt="Warriors United FC logo" width="120" height="120" />
+        <div class="brand-text">
+          <h1 class="sr-only">Warriors United FC – Youth Soccer Club in Inland Empire, CA</h1>
+          <div aria-hidden="true">
+            <span class="brand-line-1">WARRIORS</span>
+            <span class="brand-line-2">UNITED FC</span>
+          </div>
         </div>
-    </section>
+      </a>
 
-    <!-- CONTENT -->
-    <section class="content">
-        <div>
-            <div class="section" id="about">
-                <h3>OUR PHILOSOPHY</h3>
-                <p>We believe in developing young athletes through dedication, teamwork, and respect. Our holistic
-                    approach emphasizes skill development, character, and athletic excellence.</p>
-            </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#academy">ACADEMY</a></li>
+        <li><a href="#teams">TEAMS</a></li>
+        <li><a href="#news">NEWS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li><button class="join-btn" onclick="openModal()">JOIN NOW</button></li>
+      </ul>
 
-            <div class="section" id="news" style="margin-top:2rem;">
-                <h3>NEWS & RESULTS</h3>
-                <p>Get in touch with us for more information or to schedule a tryout. We look forward to hearing from
-                    you!</p>
-                <div class="news-item">
-                    <span class="news-date">April 20, 2024</span>
-                    <span class="news-title">U-12 Boys Triumph in Opening Match</span>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">April 15, 2024</span>
-                    <span class="news-title">Spring Season Kickoff This Weekend</span>
-                </div>
-                <a href="#" class="view-all">VIEW ALL</a>
-            </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Warriors United FC – Youth Soccer Club in Inland Empire, CA</h1>
+      <p>Discipline. Passion. <span>Unity.</span></p>
+      <button class="learn-more-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Learn more</button>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content">
+    <div>
+      <div class="section" id="about">
+        <h2>Kids Soccer Club & Academy (Ages 5–18)</h2>
+        <p>We develop young athletes through certified coaching, teamwork, and respect. Our holistic approach emphasizes skill development, character, and athletic excellence.</p>
+        <p class="service-areas">Serving families in <strong>Banning, Beaumont, Yucaipa, Redlands, Riverside, San Bernardino, Hemet, Perris</strong> and nearby areas.</p>
+      </div>
+
+      <div class="section" id="news" style="margin-top:2rem;">
+        <h2>Club News & Match Results</h2>
+        <p>Follow our latest updates, tournaments, and achievements across the Inland Empire.</p>
+        <div class="news-item">
+          <span class="news-date">April 20, 2024</span>
+          <span class="news-title">U-12 Boys Triumph in Opening Match</span>
         </div>
-
-        <div>
-            <div class="section" id="academy">
-                <h3>ACADEMY</h3>
-                <p>Our comprehensive youth academy offers <strong>top-notch coaching</strong>, facilities, and programs
-                    for various age groups.</p>
-                <a href="#" class="read-more">READ MORE</a>
-            </div>
-
-            <div class="section" id="contact" style="margin-top:2rem;">
-                <h3>CONTACT</h3>
-                <p>Get in touch with us for more information or to schedule a tryout.</p>
-                <button class="register-btn" onclick="openModal()">REGISTER NOW</button>
-            </div>
+        <div class="news-item">
+          <span class="news-date">April 15, 2024</span>
+          <span class="news-title">Spring Season Kickoff This Weekend</span>
         </div>
-    </section>
-
-    <!-- MODAL -->
-    <div class="modal" id="registrationModal" role="dialog" aria-modal="true" aria-labelledby="regTitle">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
-            <h3 id="regTitle">REGISTRATION FORM</h3>
-            <p class="subtitle">Join Warriors United FC and start your journey!</p>
-
-            <form id="registrationForm" onsubmit="handleSubmit(event)">
-                <!-- form fields same as before -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstName">First Name *</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name *</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="age">Player Age *</label>
-                        <input type="number" id="age" name="age" min="5" max="18" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="position">Position *</label>
-                        <select id="position" name="position" required>
-                            <option value="">Select Position</option>
-                            <option value="goalkeeper">Goalkeeper</option>
-                            <option value="defender">Defender</option>
-                            <option value="midfielder">Midfielder</option>
-                            <option value="forward">Forward</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="experience">Experience Level *</label>
-                    <select id="experience" name="experience" required>
-                        <option value="">Select Experience</option>
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Additional Information</label>
-                    <textarea id="message" name="message"
-                        placeholder="Tell us about your soccer experience..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">SUBMIT REGISTRATION</button>
-            </form>
-        </div>
+        <a href="#" class="view-all">View all</a>
+      </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <h4>WARRIORS UNITED FC</h4>
-                <p>Developing young athletes through dedication, teamwork, and respect. Our holistic approach emphasizes
-                    skill development, character, and athletic excellence.</p>
-            </div>
-            <div class="footer-social">
-                <h4>FOLLOW US</h4>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">f</a>
-                    <a href="#" aria-label="Instagram">◍</a>
-                    <a href="#" aria-label="Twitter">t</a>
-                    <a href="#" aria-label="YouTube">▶</a>
-                </div>
-            </div>
+    <div>
+      <div class="section" id="academy">
+        <h2>Soccer Academy & Clinics in the Inland Empire</h2>
+        <p>Top-notch coaching, age-specific programs, and year-round training for beginners to advanced players.</p>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+
+      <div class="section" id="teams" style="margin-top:2rem;">
+        <h2>Youth Soccer Teams (U6–U18)</h2>
+        <p>Competitive and developmental teams for boys and girls. Looking for <strong>kids soccer teams near you</strong>? Join a training session or tryout.</p>
+      </div>
+
+      <div class="section" id="contact" style="margin-top:2rem;">
+        <h2>Tryouts & Registration</h2>
+        <p>Ready to join a leading <strong>youth soccer club</strong> in the Inland Empire? Apply for tryouts today.</p>
+        <button class="register-btn" onclick="openModal()">Register now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal" id="registrationModal" role="dialog" aria-modal="true" aria-labelledby="regTitle">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <h3 id="regTitle">Registration Form</h3>
+      <p class="subtitle">Join Warriors United FC and start your journey!</p>
+
+      <form id="registrationForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> Warriors United FC. All rights reserved.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone *</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
         </div>
-    </footer>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="age">Player Age *</label>
+            <input type="number" id="age" name="age" min="5" max="18" required>
+          </div>
+          <div class="form-group">
+            <label for="position">Position *</label>
+            <select id="position" name="position" required>
+              <option value="">Select Position</option>
+              <option value="goalkeeper">Goalkeeper</option>
+              <option value="defender">Defender</option>
+              <option value="midfielder">Midfielder</option>
+              <option value="forward">Forward</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="experience">Experience Level *</label>
+          <select id="experience" name="experience" required>
+            <option value="">Select Experience</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Additional Information</label>
+          <textarea id="message" name="message" placeholder="Tell us about your soccer experience..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit registration</button>
+      </form>
+    </div>
+  </div>
 
-    <script>
-        // Mobile menu toggle + aria-expanded
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
-        });
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => navLinks.classList.remove('active'));
-        });
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h4>Warriors United FC</h4>
+        <p>Developing young athletes through dedication, teamwork, and respect. Our holistic approach emphasizes skill development, character, and athletic excellence.</p>
+      </div>
+      <div class="footer-social">
+        <h4>Follow us</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◍</a>
+          <a href="#" aria-label="Twitter">t</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Warriors United FC. All rights reserved.</p>
+    </div>
+  </footer>
 
-        // Modal
-        const modal = document.getElementById('registrationModal');
-        function openModal() { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
-        function closeModal() { modal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  <script>
+    // Mobile menu toggle + aria-expanded
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
 
-        function handleSubmit(e) {
-            e.preventDefault();
-            const data = Object.fromEntries(new FormData(e.target));
-            console.log('Registration Data:', data);
-            alert('¡Registro exitoso! Nos pondremos en contacto contigo pronto.');
-            e.target.reset(); closeModal();
-        }
+    // Modal
+    const modal = document.getElementById('registrationModal');
+    function openModal() { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeModal() { modal.classList.remove('active'); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target));
+      console.log('Registration Data:', data);
+      alert('Registration received! We will contact you soon with tryout details.');
+      e.target.reset(); closeModal();
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsClub",
+    "name": "Warriors United FC",
+    "url": "https://inlandempire.soccer/",
+    "logo": "https://inlandempire.soccer/assets/warriors_united_logo_blue.png",
+    "sport": "Soccer",
+    "description": "Youth and kids soccer club in the Inland Empire, CA. Academy, tryouts, and competitive teams for ages 5–18.",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Inland Empire, California"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Inland Empire",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.instagram.com/warriorsunitedfc",
+      "https://www.facebook.com/warriorsunitedfc",
+      "https://www.youtube.com/@warriorsunitedfc"
+    ]
+  }
+  </script>
+
+  <!-- Firebase (module scripts load deferred by default) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA3-Fb37xemk2Pth-LW2l6ff7wx7G6tL7c",
+      authDomain: "warriorsunitedfc-7223d.firebaseapp.com",
+      projectId: "warriorsunitedfc-7223d",
+      storageBucket: "warriorsunitedfc-7223d.firebasestorage.app",
+      messagingSenderId: "845322147531",
+      appId: "1:845322147531:web:445e06cd43e577579eed4e",
+      measurementId: "G-DPWR5ZNBY5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    getAnalytics(app);
+  </script>
 </body>
-
 </html>
