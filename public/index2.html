@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warriors United FC | Youth Soccer Club in Inland Empire, CA</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background: #f9f9f9;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #0a1628;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      height: 50px;
+      width: auto;
+    }
+
+    .brand-text h1 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    .brand-text p {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      color: #aaa;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #c41e3a;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .join-btn {
+      background: #c41e3a;
+      color: #fff;
+      padding: 0.6rem 1.5rem;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .join-btn:hover {
+      background: #a01828;
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      margin-top: 80px;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1993');
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-content h2 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero-content p span {
+      color: #c41e3a;
+    }
+
+    .learn-more-btn {
+      background: #c41e3a;
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .learn-more-btn:hover {
+      background: #a01828;
+      transform: scale(1.05);
+    }
+
+    /* Content */
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .section {
+      padding: 2rem;
+      border-left: 4px solid #c41e3a;
+      background: white;
+    }
+
+    .section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #0a1628;
+      letter-spacing: 1px;
+    }
+
+    .section p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .page-section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .page-section h2 {
+      font-size: 2.5rem;
+      color: #0a1628;
+      margin-bottom: 2rem;
+      letter-spacing: 2px;
+    }
+
+    .page-section h3 {
+      font-size: 1.8rem;
+      color: #0a1628;
+      margin: 2rem 0 1rem;
+      letter-spacing: 1px;
+    }
+
+    .page-section p {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .team-card {
+      background: white;
+      padding: 2rem;
+      border-left: 4px solid #c41e3a;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-card h4 {
+      color: #0a1628;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .news-card {
+      background: white;
+      padding: 2rem;
+      border-left: 4px solid #c41e3a;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-card h4 {
+      color: #0a1628;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .news-card .date {
+      color: #c41e3a;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0a1628;
+      color: #fff;
+      padding: 3rem 0 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .footer-info h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .footer-info p {
+      color: #aaa;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .footer-social {
+      text-align: right;
+    }
+
+    .footer-social h4 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .social-links a:hover {
+      background: #c41e3a;
+      border-color: #c41e3a;
+      transform: translateY(-3px);
+    }
+
+    .social-links svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding: 2rem 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      color: #888;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* WhatsApp Float Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 999;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: flex;
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #0a1628;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-social {
+        text-align: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="brand" onclick="showPage('home')">
+        <img class="brand-logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23f5f5f0' stroke='%23c41e3a' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='%230a1628' stroke-width='2'/%3E%3Ctext x='50' y='60' font-size='40' font-weight='bold' fill='%230a1628' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E" alt="Warriors United FC logo" width="50" height="50">
+        <div class="brand-text">
+          <h1>WARRIORS</h1>
+          <p>UNITED FC</p>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" onclick="showPage('about')">ABOUT</a></li>
+        <li><a href="#" onclick="showPage('academy')">ACADEMY</a></li>
+        <li><a href="#" onclick="showPage('teams')">TEAMS</a></li>
+        <li><a href="#" onclick="showPage('news')">NEWS</a></li>
+        <li><a href="#" onclick="showPage('contact')">CONTACT</a></li>
+        <li><button class="join-btn">JOIN NOW</button></li>
+      </ul>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HOME PAGE -->
+  <div id="homePage">
+    <section class="hero">
+      <div class="hero-content">
+        <h2>WARRIORS UNITED FC</h2>
+        <p>DISCIPLINE. PASSION. <span>UNITY.</span></p>
+        <button class="learn-more-btn" onclick="showPage('about')">LEARN MORE</button>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="content-grid">
+        <div>
+          <div class="section">
+            <h3>OUR PHILOSOPHY</h3>
+            <p>We believe in developing young athletes through dedication, teamwork, and respect. Our holistic approach emphasizes skill development, character, and athletic excellence.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="section">
+            <h3>GET STARTED</h3>
+            <p>Join Warriors United FC and start your soccer journey today. Contact us for tryouts and more information.</p>
+            <button class="join-btn" style="width: 100%; margin-top: 1rem;">REGISTER NOW</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="aboutPage" class="hidden">
+    <div style="height: 80px;"></div>
+    <section class="page-section">
+      <h2>ABOUT WARRIORS UNITED FC</h2>
+      <p>Warriors United FC is a premier youth soccer club based in the Inland Empire, California. Founded with a mission to develop not just skilled players, but well-rounded individuals, we emphasize the core values of discipline, passion, and unity.</p>
+      
+      <h3>Our Mission</h3>
+      <p>To provide a positive, challenging, and professional environment where young athletes can develop their soccer skills while building character, confidence, and lifelong friendships.</p>
+      
+      <h3>Our Values</h3>
+      <p><strong>Discipline:</strong> We teach players the importance of dedication, practice, and commitment to excellence both on and off the field.</p>
+      <p><strong>Passion:</strong> We inspire a genuine love for the beautiful game, encouraging players to give their best effort in every practice and match.</p>
+      <p><strong>Unity:</strong> We build strong teams where every player supports one another, creating a family atmosphere that extends beyond the soccer field.</p>
+      
+      <h3>Our History</h3>
+      <p>Since our founding, Warriors United FC has grown into one of the most respected youth soccer organizations in Southern California. Our teams consistently compete at the highest levels while maintaining our commitment to player development and sportsmanship.</p>
+    </section>
+  </div>
+
+  <!-- ACADEMY PAGE -->
+  <div id="academyPage" class="hidden">
+    <div style="height: 80px;"></div>
+    <section class="page-section">
+      <h2>WARRIORS ACADEMY</h2>
+      <p>Our comprehensive youth academy offers professional coaching, state-of-the-art facilities, and structured programs designed to develop players of all skill levels from ages 5-18.</p>
+      
+      <h3>Program Features</h3>
+      <p><strong>Professional Coaching:</strong> All our coaches are licensed and experienced in youth player development, using proven training methodologies.</p>
+      <p><strong>Age-Appropriate Training:</strong> Programs tailored to different age groups ensuring proper technical and tactical development.</p>
+      <p><strong>Character Development:</strong> Beyond soccer skills, we focus on building leadership, teamwork, and resilience.</p>
+      <p><strong>Competitive Opportunities:</strong> Players have the chance to compete in local, regional, and national tournaments.</p>
+      
+      <h3>Training Schedule</h3>
+      <p>Training sessions are held 2-3 times per week, with match days on weekends. We offer flexible scheduling to accommodate school and family commitments.</p>
+      
+      <h3>Facilities</h3>
+      <p>We train at premier soccer facilities throughout the Inland Empire, featuring full-size fields, professional equipment, and excellent amenities for players and families.</p>
+    </section>
+  </div>
+
+  <!-- TEAMS PAGE -->
+  <div id="teamsPage" class="hidden">
+    <div style="height: 80px;"></div>
+    <section class="page-section">
+      <h2>OUR TEAMS</h2>
+      <p>Warriors United FC fields competitive teams across multiple age groups, from U-8 through U-18. Each team is led by experienced coaches dedicated to player development and success.</p>
+      
+      <div class="team-grid">
+        <div class="team-card">
+          <h4>U-8 & U-10</h4>
+          <p><strong>Grassroots Development</strong></p>
+          <p>Focus on fundamental skills, ball mastery, and introduction to team play in a fun, supportive environment.</p>
+        </div>
+        
+        <div class="team-card">
+          <h4>U-12 & U-14</h4>
+          <p><strong>Competitive Development</strong></p>
+          <p>Advanced technical training, tactical understanding, and competitive match experience at tournament level.</p>
+        </div>
+        
+        <div class="team-card">
+          <h4>U-16 & U-18</h4>
+          <p><strong>Elite Program</strong></p>
+          <p>High-level competition, college preparation, and advanced tactical training for serious athletes.</p>
+        </div>
+      </div>
+      
+      <h3 style="margin-top: 3rem;">Tryouts</h3>
+      <p>We hold tryouts twice a year - in the spring and fall. All players are welcome to attend. Register through our contact form to receive tryout information.</p>
+    </section>
+  </div>
+
+  <!-- NEWS PAGE -->
+  <div id="newsPage" class="hidden">
+    <div style="height: 80px;"></div>
+    <section class="page-section">
+      <h2>NEWS & UPDATES</h2>
+      
+      <div class="news-list">
+        <div class="news-card">
+          <div class="date">April 20, 2024</div>
+          <h4>U-12 Boys Triumph in Opening Match</h4>
+          <p>Our U-12 boys team started the spring season with an impressive 3-1 victory against tough competition. The team showed excellent teamwork and determination throughout the match.</p>
+        </div>
+        
+        <div class="news-card">
+          <div class="date">April 15, 2024</div>
+          <h4>Spring Season Kickoff This Weekend</h4>
+          <p>Warriors United FC kicks off the spring season this weekend with matches across all age groups. Come out and support our teams!</p>
+        </div>
+        
+        <div class="news-card">
+          <div class="date">April 1, 2024</div>
+          <h4>New Training Facility Partnership Announced</h4>
+          <p>We're excited to announce a new partnership that will give our teams access to premier training facilities in the Inland Empire.</p>
+        </div>
+        
+        <div class="news-card">
+          <div class="date">March 25, 2024</div>
+          <h4>Summer Camp Registration Now Open</h4>
+          <p>Registration is now open for our summer soccer camps! Spaces are limited, so sign up early to secure your spot.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div id="contactPage" class="hidden">
+    <div style="height: 80px;"></div>
+    <section class="page-section">
+      <h2>CONTACT US</h2>
+      <p>Get in touch with Warriors United FC for tryout information, registration details, or any questions about our programs.</p>
+      
+      <h3>Contact Information</h3>
+      <p><strong>Email:</strong> info@warriorsunitedfc.com</p>
+      <p><strong>Phone:</strong> (951) 555-0123</p>
+      <p><strong>WhatsApp:</strong> (951) 555-0123</p>
+      
+      <h3>Location</h3>
+      <p>Inland Empire, California</p>
+      <p>Training facilities throughout Riverside and San Bernardino counties</p>
+      
+      <h3>Ready to Join?</h3>
+      <p>Click the button below to fill out our registration form and start your journey with Warriors United FC.</p>
+      <button class="learn-more-btn" style="margin-top: 2rem;">REGISTER NOW</button>
+    </section>
+  </div>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/19515550123" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 0C7.164 0 0 7.164 0 16c0 2.824.738 5.606 2.14 8.062L.048 30.928l7.098-1.86A15.93 15.93 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.508 0-4.964-.686-7.104-1.98l-.51-.304-5.294 1.388 1.414-5.158-.334-.528A13.282 13.282 0 0 1 2.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.28-9.946c-.398-.2-2.358-1.164-2.724-1.296-.366-.134-.632-.2-.898.2-.266.398-1.032 1.296-1.266 1.564-.232.266-.466.3-.864.1-.398-.2-1.68-.62-3.2-1.976-1.184-1.056-1.984-2.36-2.216-2.758-.234-.398-.026-.614.174-.812.18-.178.398-.466.598-.698.2-.232.266-.398.4-.666.132-.266.066-.5-.034-.698-.1-.2-.898-2.164-1.232-2.964-.324-.776-.654-.672-.898-.684-.232-.01-.498-.012-.764-.012-.266 0-.698.1-1.064.5-.366.398-1.398 1.364-1.398 3.328s1.432 3.86 1.632 4.126c.2.266 2.824 4.312 6.842 6.046.956.414 1.702.66 2.284.846.96.304 1.834.262 2.524.158.77-.114 2.358-.964 2.692-1.896.332-.93.332-1.728.232-1.896-.1-.166-.366-.266-.764-.466z"/>
+    </svg>
+  </a>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h4>WARRIORS UNITED FC</h4>
+        <p>Developing young athletes through dedication, teamwork, and respect. Our holistic approach emphasizes skill development, character, and athletic excellence.</p>
+      </div>
+      <div class="footer-social">
+        <h4>FOLLOW US</h4>
+        <div class="social-links">
+          <a href="https://facebook.com/warriorsunitedfc" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com/warriorsunitedfc" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com/warriorsunitedfc" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com/@warriorsunitedfc" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Warriors United FC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Page Navigation
+    const pages = {
+      home: document.getElementById('homePage'),
+      about: document.getElementById('aboutPage'),
+      academy: document.getElementById('academyPage'),
+      teams: document.getElementById('teamsPage'),
+      news: document.getElementById('newsPage'),
+      contact: document.getElementById('contactPage')
+    };
+
+    function showPage(pageName) {
+      // Hide all pages
+      Object.values(pages).forEach(page => {
+        if (page) page.classList.add('hidden');
+      });
+      
+      // Show selected page
+      if (pages[pageName]) {
+        pages[pageName].classList.remove('hidden');
+        window.scrollTo(0, 0);
+      }
+      
+      // Close mobile menu if open
+      const navLinks = document.getElementById('navLinks');
+      if (navLinks) {
+        navLinks.classList.remove('active');
+      }
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (mobileMenuBtn && navLinks) {
+      mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking on a link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          navLinks.classList.remove('active');
+        }
+      });
+    }
+
+    // Make showPage available globally
+    window.showPage = showPage;
+  </script>
+</body>
+</html>
